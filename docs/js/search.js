@@ -200,6 +200,12 @@
     });
 
     window.index.add({
+      href: 'http://materializecss.com/slider.html',
+      title: 'Slider',
+      body: 'Add a slider with images or panels. Offers multiple styles and options.'
+    });
+
+    window.index.add({
       href: 'http://materializecss.com/range.html',
       title: 'range slider',
       body: 'Add a range slider for values with a wide range.'

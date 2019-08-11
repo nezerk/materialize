@@ -5,6 +5,7 @@
     indicators: true,
     height: 400,
     duration: 500,
+    captionDuration: 1500,
     interval: 6000
   };
 
@@ -30,6 +31,7 @@
        * @prop {Boolean} [indicators=true] - Show indicators
        * @prop {Number} [height=400] - height of slider
        * @prop {Number} [duration=500] - Length in ms of slide transition
+       * @prop {Number} [captionDuration=1500] - Length in ms of caption transition
        * @prop {Number} [interval=6000] - Length in ms of slide interval
        */
       this.options = $.extend({}, Slider.defaults, options);
@@ -94,7 +96,7 @@
           opacity: 1,
           translateX: 0,
           translateY: 0,
-          duration: this.options.duration,
+          duration: this.options.captionDuration,
           easing: 'easeOutQuad'
         });
       });
@@ -190,12 +192,26 @@
         easing: 'easeOutQuad'
       };
 
-      if ($(caption).hasClass('center-align')) {
+      // [center|left|right]-align kept for backwards compatibility
+      // left at 100, but should be 100%
+      // these settings are used if no (*-in) used
+
+      if ($(caption).hasClass('bottom-in')) {
+        animOptions.translateY = '100%';
+      } else if ($(caption).hasClass('top-in')) {
+        animOptions.translateY = '-100%';
+      } else if ($(caption).hasClass('center-align')) {
         animOptions.translateY = -100;
-      } else if ($(caption).hasClass('right-align')) {
-        animOptions.translateX = 100;
+      }
+
+      if ($(caption).hasClass('left-in')) {
+        animOptions.translateX = '-100%';
+      } else if ($(caption).hasClass('right-in')) {
+        animOptions.translateX = '100%';
       } else if ($(caption).hasClass('left-align')) {
         animOptions.translateX = -100;
+      } else if ($(caption).hasClass('right-align')) {
+        animOptions.translateX = 100;
       }
 
       anim(animOptions);
@@ -273,7 +289,7 @@
           }
         });
 
-        this._animateCaptionIn($caption[0], this.options.duration);
+        this._animateCaptionIn($caption[0], this.options.captionDuration);
 
         // Update indicators
         if (this.options.indicators) {
@@ -293,7 +309,7 @@
           opacity: 1,
           translateX: 0,
           translateY: 0,
-          duration: this.options.duration,
+          duration: this.options.captionDuration,
           delay: this.options.duration,
           easing: 'easeOutQuad'
         });
@@ -320,7 +336,7 @@
       clearInterval(this.interval);
       this.interval = setInterval(
         this._handleIntervalBound,
-        this.options.duration + this.options.interval
+        this.options.duration + this.options.captionDuration + this.options.interval
       );
     }
 

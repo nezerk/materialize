@@ -1,0 +1,343 @@
+<div class="container">
+  <div class="row">
+    <div class="col s12 m8 offset-m1 xl7 offset-xl1">
+
+      <!--  Slider Section  -->
+      <div id="slider" class="scrollspy section">
+        <p class="caption">Our slider is a simple and elegant image carousel. You can also have captions that will be transitioned on their
+          own depending on their alignment. You can also have indicators that show up on the bottom of the slider. </p>
+        <br>
+
+        <div class="slider">
+          <ul class="slides">
+            <li>
+              <img src="https://lorempixel.com/580/250/nature/1">
+              <!-- random image -->
+              <div class="caption center-align">
+                <h3>This is our big Tagline!</h3>
+                <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+              </div>
+            </li>
+            <li>
+              <img src="https://lorempixel.com/580/250/nature/2">
+              <!-- random image -->
+              <div class="caption left-align">
+                <h3>Left Aligned Caption</h3>
+                <h5 class="light grey-text text-lighten-3">Comes "in" from aligned side.</h5>
+              </div>
+            </li>
+            <li>
+              <img src="https://lorempixel.com/580/250/nature/3">
+              <!-- random image -->
+              <div class="caption right-align left-in">
+                <h3>Right Aligned Caption</h3>
+                <h5 class="light grey-text text-lighten-3">But this started from left???</h5>
+              </div>
+            </li>
+            <li>
+              <img src="https://lorempixel.com/580/250/nature/4">
+              <!-- random image -->
+              <div class="caption center-align bottom-in">
+                <h3>bottom-in Tagline!</h3>
+                <h5 class="light grey-text text-lighten-3">Also try left-in, right-in, top-in.</h5>
+              </div>
+            </li>
+            <li>
+              <img src="https://lorempixel.com/580/250/nature/5">
+              <!-- random image -->
+              <div class="caption right-align bottom-in left-in">
+                <h3>In from 8 locations</h3>
+                <h5 class="light grey-text text-lighten-3">Combine two classes for corners.</h5>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <br>
+
+        <pre><code class="language-markup">
+  &lt;div class="slider">
+    &lt;ul class="slides">
+      &lt;li>
+        &lt;img src="https://lorempixel.com/580/250/nature/1"> &lt;!-- random image -->
+        &lt;div class="caption center-align">
+          &lt;h3>This is our big Tagline!&lt;/h3>
+          &lt;h5 class="light grey-text text-lighten-3">Here's our small slogan.&lt;/h5>
+        &lt;/div>
+      &lt;/li>
+      &lt;li>
+        &lt;img src="https://lorempixel.com/580/250/nature/2"> &lt;!-- random image -->
+        &lt;div class="caption left-align">
+          &lt;h3>Left Aligned Caption&lt;/h3>
+          &lt;h5 class="light grey-text text-lighten-3">Comes "in" from aligned side.&lt;/h5>
+        &lt;/div>
+      &lt;/li>
+      &lt;li>
+        &lt;img src="https://lorempixel.com/580/250/nature/3"> &lt;!-- random image -->
+        &lt;div class="caption right-align left-in">
+          &lt;h3>Right Aligned Caption&lt;/h3>
+          &lt;h5 class="light grey-text text-lighten-3">Why this started from left???.&lt;/h5>
+        &lt;/div>
+      &lt;/li>
+      &lt;li>
+        &lt;img src="https://lorempixel.com/580/250/nature/4"> &lt;!-- random image -->
+        &lt;div class="caption center-align bottom-in">
+          &lt;h3>bottom-in Tagline!&lt;/h3>
+          &lt;h5 class="light grey-text text-lighten-3">Also try left-in, right-in, top-in.&lt;/h5>
+        &lt;/div>
+      &lt;/li>
+      &lt;li>
+        &lt;img src="https://lorempixel.com/580/250/nature/5"> &lt;!-- random image -->
+        &lt;div class="caption center-align bottom-in left-in">
+          &lt;h3>In from 8 locations&lt;/h3>
+          &lt;h5 class="light grey-text text-lighten-3">Combine two classes for corners.&lt;/h5>
+        &lt;/div>
+      &lt;/li>
+    &lt;/ul>
+  &lt;/div>
+      </code></pre>
+        <br>
+
+        <h4>Initialization</h4>
+        <pre><code class="language-javascript">
+  document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.slider');
+    var instances = M.Slider.init(elems, options);
+  });
+
+  // Or with jQuery
+
+  $(document).ready(function(){
+    $('.slider').slider();
+  });
+        </code></pre>
+        <br>
+
+        <h4>Options</h4>
+        <table class="striped">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Type</th>
+              <th>Default</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr>
+              <td>indicators</td>
+              <td>Boolean</td>
+              <td>true</td>
+              <td>Set to false to hide slide indicators.</td>
+            </tr>
+            <tr>
+              <td>height</td>
+              <td>Number</td>
+              <td>400</td>
+              <td>Set height of slider.</td>
+            </tr>
+            <tr>
+              <td>duration</td>
+              <td>Number</td>
+              <td>500</td>
+              <td>Set the duration of the transition animation for slides in ms.</td>
+            </tr>
+            <tr>
+              <td>captionDuration</td>
+              <td>Number</td>
+              <td>1500</td>
+              <td>Set the duration of the transition animation for caption in ms.</td>
+            </tr>
+            <tr>
+              <td>interval</td>
+              <td>Number</td>
+              <td>6000</td>
+              <td>Set the duration between transitions in ms. (calculated interval is the total of duration, captionDuration, and interval)</td>
+            </tr>
+            <tr>
+              <td colspan="4">
+                Timeline for each slide:<br> 
+                  - First image (or placeholder) will transition in duration (500 ms)<br>
+                  - Then caption will transition in captionDuration (1500 ms)<br>
+                  - Then rendered slide will stay interval (6000 ms)
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <br>
+
+        <h4>Methods</h4>
+        <p>We have methods to pause, start, move to next and move to previous slide.</p>
+
+        <blockquote>
+          <p>Because jQuery is no longer a dependency, all the methods are called on the plugin instance. You can get the plugin
+            instance like this: </p>
+          <pre><code class="language-javascript col s12">
+    var instance = M.Slider.getInstance(elem);
+
+    /* jQuery Method Calls
+      You can still use the old jQuery plugin method calls.
+      But you won't be able to access instance properties.
+
+      $('.slider').slider('methodName');
+      $('.slider').slider('methodName', paramName);
+    */
+          </code></pre>
+        </blockquote>
+        <h5 class="method-header">
+          .pause();
+        </h5>
+        <p>Pause slider autoslide</p>
+        <pre><code class="language-javascript col s12">
+  instance.pause();
+        </code></pre>
+        <br>
+
+        <h5 class="method-header">
+          .start();
+        </h5>
+        <p>Start slider autoslide</p>
+        <pre><code class="language-javascript col s12">
+  instance.start();
+        </code></pre>
+        <br>
+
+        <h5 class="method-header">
+          .next();
+        </h5>
+        <p>Move to next slider</p>
+        <pre><code class="language-javascript col s12">
+  instance.next();
+        </code></pre>
+        <br>
+
+        <h5 class="method-header">
+          .prev();
+        </h5>
+        <p>Move to prev slider</p>
+        <pre><code class="language-javascript col s12">
+  instance.prev();
+        </code></pre>
+        <br>
+
+        <h5 class="method-header">
+          .destroy();
+        </h5>
+        <p>Destroy plugin instance and teardown</p>
+        <pre><code class="language-javascript col s12">
+  instance.destroy();
+        </code></pre>
+        <br>
+        <br>
+
+        <h4>Properties</h4>
+        <table class="striped">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Type</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr>
+              <td>el</td>
+              <td>Element</td>
+              <td>The DOM element the plugin was initialized with.</td>
+            </tr>
+            <tr>
+              <td>options</td>
+              <td>Object</td>
+              <td>The options the instance was initialized with.</td>
+            </tr>
+            <tr>
+              <td>activeIndex</td>
+              <td>Number</td>
+              <td>Index of current slide.</td>
+            </tr>
+          </tbody>
+        </table>
+        <br>
+        <br>
+
+        <div id="fullscreenSlider" class="scrollspy section">
+          <h3 class="header">Fullscreen Slider</h3>
+          <p>You can easliy make this slider a fullscreen slider by adding the class
+            <code class="language-markup">fullscreen</code> to the slider div. Here's a quick demo.</p>
+          <a href="fullscreen-slider-demo.html" target="_blank" class="btn-large waves-effect waves-light">Open Demo</a>
+ 
+          <br>
+          <p>A fullscreen demo can be created with the following HTML</p>  
+          <pre><code class="language-markup">
+      &lt;div class="slider fullscreen">
+        &lt;ul class="slides">
+          &lt;li>
+            &lt;img src="https://lorempixel.com/1440/800/technics/1"> &lt;!-- random image -->
+            &lt;div class="caption center-align">
+              &lt;h3>This is our big Tagline!&lt;/h3>
+              &lt;h5 class="light grey-text text-lighten-3">Here's our small slogan.&lt;/h5>
+            &lt;/div>
+          &lt;/li>
+          &lt;li>
+            &lt;img src="https://lorempixel.com/1440/800/technics/2"> &lt;!-- random image -->
+            &lt;div class="caption left-align">
+              &lt;h3>Left Aligned Caption&lt;/h3>
+              &lt;h5 class="light grey-text text-lighten-3">Here's our small slogan.&lt;/h5>
+            &lt;/div>
+          &lt;/li>
+          &lt;li>
+            &lt;img src="https://lorempixel.com/1440/800/technics/3"> &lt;!-- random image -->
+            &lt;div class="caption right-align bottom-in left-in">
+              &lt;h3>Right Aligned Caption&lt;/h3>
+              &lt;h5 class="light grey-text text-lighten-3">Here's our small slogan.&lt;/h5>
+            &lt;/div>
+          &lt;/li>
+        &lt;/ul>
+      &lt;/div>
+          </code></pre>
+          <br>
+    
+        </div>
+      </div>
+
+      <br>
+      <div id="materialbox" class="scrollspy section">
+          <h3 class="header">Material Box / Carousel</h3>
+          <p class="caption">If you need other image options, please see Material box and Carousel.</p>
+  
+          <a href="media.html" class="btn-large waves-effect waves-light">Open Media Page</a>
+          <a href="carousel.html" class="btn-large waves-effect waves-light">Open Carousel Page</a>
+      </div>
+
+    </div>
+
+
+    <!-- Table of Contents -->
+    <div class="col hide-on-small-only m3 xl3 offset-xl1">
+      <div class="toc-wrapper">
+        <div class="buysellads hide-on-small-only">
+          <!-- CarbonAds Zone Code -->
+          <script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?serve=CKYIK27J&placement=materializecss" id="_carbonads_js"></script>
+        </div>
+        <div style="height: 1px;">
+          <ul class="section table-of-contents">
+            <li>
+              <a href="#slider">Slider</a>
+            </li>
+            <li>
+                <a href="#fullscreenSlider">Fullscreen Slider</a>
+            </li>
+            <li>
+              <a href="#materialbox">Material Box</a>
+            </li>
+            <li>
+              <a href="#materialbox">Carousel</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

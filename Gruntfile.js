@@ -417,6 +417,7 @@ module.exports = function(grunt) {
           'pushpin.html': 'jade/pushpin.jade',
           'waves.html': 'jade/waves.jade',
           'media.html': 'jade/media.jade',
+          'slider.html': 'jade/slider.jade',
           'collapsible.html': 'jade/collapsible.jade',
           'scrollspy.html': 'jade/scrollspy.jade',
           'fullscreen-slider-demo.html': 'jade/fullscreen-slider-demo.jade',
